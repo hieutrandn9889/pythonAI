@@ -1,7 +1,7 @@
 import cv2
 
 # read image and gray image color
-image = cv2.imread("same.png", cv2.IMREAD_GRAYSCALE)
+image = cv2.imread("sample.png", cv2.IMREAD_GRAYSCALE)
 
 # show image with title: "Anh"
 cv2.imshow("Anh", image)

@@ -1,11 +1,10 @@
 import cv2
 
 #number camera 
-# camera_id = 0 > open your camera
+# open your camera
+# camera_id = 0 
 
 camera_id = "sample.avi"
-
-
 
 # open camera
 cap = cv2.VideoCapture(camera_id)
