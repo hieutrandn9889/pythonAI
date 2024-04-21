@@ -9,7 +9,7 @@ cv2.imshow("Anh mau", image)
 cv2.waitKey()
 
 # convert to gray image
-grayImage = cv2.cvtColor(image,cv2.COLOR_BAYER_BG2GRAY)
+grayImage = cv2.cvtColor(image, cv2.COLOR_BAYER_BG2GRAY)
 
 
 edeges = cv2.Canny(grayImage, threshold1=100, threshold2=200)
