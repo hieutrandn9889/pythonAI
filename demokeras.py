@@ -28,7 +28,7 @@ x_train, x_val,  y_train, y_val = train_test_split(x_train_val, y_train_val, tes
 #input_dim = 8 => x = 6,148,72,35,0,33.6,0.627,50
 # y = 1
 # relu: ham khu tinh tuyen , sigmoid: đồ thị
-model = Sequential
+model = Sequential()
 model.add(Dense(16, input_dim=8, activation = 'relu'))
 model.add(Dense(8, activation = 'relu'))
 model.add(Dense(1, activation = 'sigmoid'))
