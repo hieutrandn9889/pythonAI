@@ -3,14 +3,6 @@ from flask_cors import CORS, cross_origin
 from flask import request
 import tensorflow as tf
 
-#load keras model >> fixed TF is nit an element of this graph
-sess = tf.Session()
-graph = tf.get_default_graph()
-
-with sess.as_default():
-    with graph.as_default():
-        face_model = load_model("facenet.h5")
-
 
 # khoi tao flask server backend
 app = Flask(__name__)
@@ -22,12 +14,15 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route('/nhandienkhuonmat', methods=['POST', 'GET'])
 @cross_origin(origins='*')
-def uppercase_process():
-    face = request.args.get('nhandienkhuonmat')
-    with sess.as_default():
-        with graph.as_default():
-            tenNguoi = face_model.predict(face)
-    return tenNguoi
+def nhandienkhuonmat_process():
+    face_numbers = 0
+
+    # đọc ảnh từ clent gởi lên
+    face = request.form.get('facebase64')
+    
+
+    # result
+    return "Số mặt là  = " + str(face_numbers)
 
 
 #start Backend
